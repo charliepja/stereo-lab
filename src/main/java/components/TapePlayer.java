@@ -4,10 +4,12 @@ public class TapePlayer extends Component implements IPlay  {
     private String make;
     private String model;
     private String tape;
+    private Boolean status;
 
     public TapePlayer(String make, String model) {
         this.make = make;
         this.model = model;
+        this.status = false;
     }
 
     public String getMake() {
@@ -20,6 +22,10 @@ public class TapePlayer extends Component implements IPlay  {
 
     public String getTape() {
         return this.tape;
+    }
+
+    public Boolean getStatus() {
+        return this.status;
     }
 
     public void setTape(String tape) {
@@ -39,9 +45,11 @@ public class TapePlayer extends Component implements IPlay  {
     }
 
     public String on(){
+        this.status = true;
         return "This is on";
     }
     public String off(){
+        this.status = false;
         return "This is off";
     }
 }

@@ -5,11 +5,13 @@ public class CDPlayer extends Component implements IPlay  {
         private String model;
         private String CD;
         private int trackNumber;
+        private Boolean status;
 
         public CDPlayer(String make, String model) {
             this.make = make;
             this.model = model;
             this.trackNumber = 1;
+            this.status = false;
         }
 
         public String getMake() {
@@ -22,6 +24,10 @@ public class CDPlayer extends Component implements IPlay  {
 
         public String getCD() {
             return this.CD;
+        }
+
+        public Boolean getStatus() {
+            return this.status;
         }
 
         public void setCD(String CD) {
@@ -45,9 +51,11 @@ public class CDPlayer extends Component implements IPlay  {
         }
 
         public String on(){
+            this.status = true;
             return "This is on";
         }
         public String off(){
+            this.status = false;
             return "This is off";
         }
 }
